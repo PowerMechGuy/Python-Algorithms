@@ -2,7 +2,7 @@
 This repository is for python implementations of common sorting algorithms.
 
 Currently working on:
-Bubble Sort
+Selection Sort
 
 Finished:
-None
+Bubble Sort
