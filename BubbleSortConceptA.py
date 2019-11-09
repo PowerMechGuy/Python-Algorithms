@@ -107,7 +107,7 @@ def sort(inputList):
 #END main sorting function
 
 #PROGRAM FLOW
-userInput = input("Input a number to be sorted: ")
+userInput = input("Input a number to be bubble sorted: ")
 
 (counterTransfer, sizeTransfer, numberTransfer) = determineSize(int(userInput))
 print("counterTransfer = " + str(counterTransfer))
