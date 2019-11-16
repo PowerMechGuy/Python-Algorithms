@@ -36,11 +36,86 @@ def printList(inputList):
 		print(number, end=' ')
 	#END list printing for loop
 	print("\n")
-#END numberList printing function
+#END numberList printing functi
 
 def sort(inputList):
 	print("Sorting Now...")
 	printList(inputList)
+	
+	sortedNumber = []
+	
+	sortingComplete = False
+	
+	while(sortingComplete == False):
+		
+		length = len(inputList)
+		c = 0
+		
+		if(length == 2):
+			spotA = 0
+			spotB = 0
+			a = inputList[spotA]
+			b = inputList[spotB]
+			
+			if(a < b):
+				c = inputList[spotA]
+				inputList[spotA] = inputList[spotB]
+				inputList[spotB] = c
+			#END a_is_less_than_b if
+			elif(b < a):
+				c = inputList[spotB]
+				inputList[spotB] = inputList[spotA]
+				inputList[spotA] = c
+			#END b_is_less_than_a elif
+			
+			sortedNumber.extend(inputList)
+			print("Fully Sorted Number: ")
+			printList(sortedNumber)
+			sortingComplete = True
+			
+		#END length_equal_to_2 check if
+		
+		spotA = 0
+		spotB = 1
+		spotC = 0
+		
+		if(sortingComplete == False):
+			for j in range(length - 1):
+				a = inputList[spotA]
+				b = inputList[spotB]
+			
+				if(a < b):
+					c = a
+					spotC = spotA
+				#END a_is_less_b if
+			
+				elif(b < a):
+					c = b
+					spotC = spotB
+				#END b_less_than_a elif
+			
+				spotA += 1
+				spotB += 1
+			#END length_-_1 for loop
+		#END sortingComplete_equal_to_false_check if
+		
+		if(sortingComplete == False):
+			print("c is equal to: " + str(c))
+		
+			d = inputList[0]
+			inputList[0] = c
+			inputList[spotC] = d
+			sortedNumber.append(inputList[0])
+			del inputList[0]
+		
+			print("Old List")
+			printList(inputList)
+			print("New List")
+			printList(sortedNumber)
+		#END sortingComplete_equal_to_false check if
+	#END sorted_equals_false while loop
+		
+
 #END sorting function
 
 #PROGRAM FLOW
