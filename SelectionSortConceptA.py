@@ -53,7 +53,7 @@ def sort(inputList):
 		
 		if(length == 2):
 			spotA = 0
-			spotB = 0
+			spotB = 1
 			a = inputList[spotA]
 			b = inputList[spotB]
 			
@@ -69,33 +69,28 @@ def sort(inputList):
 			#END b_is_less_than_a elif
 			
 			sortedNumber.extend(inputList)
-			print("Fully Sorted Number: ")
-			printList(sortedNumber)
 			sortingComplete = True
 			
 		#END length_equal_to_2 check if
 		
 		spotA = 0
-		spotB = 1
 		spotC = 0
 		
 		if(sortingComplete == False):
-			for j in range(length - 1):
+			
+			c = inputList[0]
+			print("init c = : " + str(c))
+			
+			for j in range(length):
 				a = inputList[spotA]
-				b = inputList[spotB]
 			
-				if(a < b):
+				if(a < c):
 					c = a
+					print("c = : " + str(c))
 					spotC = spotA
-				#END a_is_less_b if
-			
-				elif(b < a):
-					c = b
-					spotC = spotB
-				#END b_less_than_a elif
+				#END a_is_less_c if
 			
 				spotA += 1
-				spotB += 1
 			#END length_-_1 for loop
 		#END sortingComplete_equal_to_false_check if
 		
@@ -114,8 +109,10 @@ def sort(inputList):
 			printList(sortedNumber)
 		#END sortingComplete_equal_to_false check if
 	#END sorted_equals_false while loop
-		
-
+	
+	if(sortingComplete == True):
+		print("Fully sorted number: " + str(sortedNumber))
+	#END print sorted number if
 #END sorting function
 
 #PROGRAM FLOW
